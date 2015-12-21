@@ -15,22 +15,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        findViewById(R.id.btnStartService).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startService(new Intent(MainActivity.this, MyService.class));
-            }
-        });
-
-        findViewById(R.id.btnStopService).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                stopService(new Intent(MainActivity.this, MyService.class));
-            }
-        });
-
+        findViewById(R.id.btnStartService).setOnClickListener(this);
+        findViewById(R.id.btnStopService).setOnClickListener(this);
         findViewById(R.id.btnBindService).setOnClickListener(this);
         findViewById(R.id.btnUnbindService).setOnClickListener(this);
+        System.out.println("aaa");
     }
 
     @Override
